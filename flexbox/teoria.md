@@ -131,3 +131,31 @@ Flexbox tiene varias propiedades unas son aplicadas a elemento padre y otras a l
 
     Tenemos unn atajo que nos ahorra escribir los flex-grow o flex-shrink o flex-basis se llama flex, y van en ese orden, el valor primero es el de grow, el segundo es el del shrink y el tercero en el basisi:
     flex: 0 1 300px.
+
+      ORDEN Y ALINEACION DE HIJOS (order y align-self).-
+        order.- Nosotro podemos invertir el orden de los elementos, esta propiedad orden nos va a controlar el orden, osea representa el orden que tendran los elementos hijos en la cja flexbox su valor por defecto es 0 y se aceptan valores negativos o positivos, un valor menor siempre ira antes que un valor mayor.
+
+        Esto funciona cuando nosotros damos un orden a los elementos hijos de los hijos, es decir, si le damos al item un orden de 0 todo lo de item tendra un mismo orden, pero si al item en su segundo hijo le damos un orden de 1 se ira al final y si le colocamos - 1 se ira al inicio ejm:
+        En el hipotetico caso que tengamos 5 item con la clase item pues los 4 items tendra el order de 0 y como vemos en el ejm de abajo tenemos el 2 elemento osea item2 este se pasara al funal y tendremos lo sig
+        item 1 - item-3 - item-4 - item-5 - item-2
+
+        y si le pasamos a un orden de -1 pues quedaria asi
+        item-2 - item 1 - item-3 - item-4 - item-5
+
+        .item {
+          order: 0
+        }
+
+        .item:nth-child(2) {
+          flex-grow: 3; */
+          flex-shrink: 2; */
+          order: 1;
+        }
+
+        align-self.- Es la propiedad de los hijos, esto nos sirve cuando queremos que un elemento tenga una alineacion distinta al resto de hermanos o hijos. Su valor por defecto es stretche igual toma los mismo valores que align-items flex-start flex-end etc etc.Este sobre escribe el valor que tenga align-items. COmo su nombre lo dice alineate tu mismo, funciona o se ve cambios cuando en el mismo ejem del order el damos un align-.self al tercer item de los 5 pues este si se moveria:
+
+        .item:nth-child(3) {
+          flex-grow: 2;
+          align-self: flex-start;
+        }
+        El tercer elemento se alineara arriba solo ese.
