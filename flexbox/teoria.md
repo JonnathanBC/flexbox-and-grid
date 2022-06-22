@@ -48,7 +48,7 @@ Flexbox tiene varias propiedades unas son aplicadas a elemento padre y otras a l
     Siempre en css los estilos son en cascada, es decir el ultimo declarado ese tomara como valor siempre.
 
     ALINEACION DEL MAIN AXIS.- Tenemos 3 elementos que nos permitira alinearlos y como distribuirlos dentro de dicha caja flexbox. Teniendo en cuenta por defecto el eje principal es horizontal, pero tambien como podemos cambiar con el flex-direction sea row seria horixontal principal si colocamos colomn y seria el principal, osea la alineacion en eje principal depende del eje principal que le hayamos dado con el flex-direction y la alineacion lo hara en base al espacio sobrante que quede en la caja padre.
-    Porque si los estamos en row y le damos un flex start seria de izq a der, pero si estamos en column seria de arriba hacia abajo, igual si estamos en row y flex-end seria de der a izq, si estamos en columna seria de abajo hacia arriba siempre alineara en el eje principal pudiendo ser row o column, si estamos en row y center seria del centro para los lados y si estamos en column y center seria del centro hacias arriba y abajo
+    Porque si los estamos en row y le damos un flex start seria de izq a der, pero si estamos en column seria de arriba hacia abajo, igual si estamos en row y flex-end seria de der a izq, si estamos en columna seria de abajo hacia arriba siempre alineara en el eje principal pudiendo ser row o column, si estamos en row y center seria del centro para los lados y si estamos en column y center seria del centro hacias arriba y abajo.
 
     -justify-content.- Este tiene los valores de:
       -flex-start.- que es el por defecto que tiene es como un float: left, alinea desde la izq a der
@@ -60,3 +60,21 @@ Flexbox tiene varias propiedades unas son aplicadas a elemento padre y otras a l
 
       -space-evenly.- Le da el mismo valor a las orillas a los elementos internos.
 
+  ALINEACION DEL CROSS AXIS (align-items y align-content).- Nos srive para alinear el eje cross, el vertical o dependiendo puede ser x o y.
+
+  align-items.- Este alinea los hijos independientemente es decir segun el numero de filas que tenemos, en cambio el justify-content alinea en conjunto es decir se lleva todas la filas o columnas, el valor por defecto es strech pero tenemos los sig valores:
+    -flex-start.- Respecto de y la alineacino es arriba
+    -flex-end.- Respecto de y la alineacion es abajo
+    -center.- Respecto de y la alineacino es en el centro
+    -stretch.- Por defecto los hijos en una caja flexbox en el eje transversal, se van a estirar al tamaño del conetnedor padre.
+
+    -baseline.- Define cual es la linea imaginaria base de todo el texto, es decir, tenemos una 3 cajas y estas cajas tienen texto dentro, esta propiedad nos hace que los textos este a la misma altura en linea.
+
+  align-content.- Este es parecido al justify-content con la diff que este funciona para el eje cross pero este si alinea todo en conjunto no independientemente. Este no funciona cuando tenemos el valor de no wrap, funcionara con el cuandop tenemos el wrap porque trabaja por grupo. Align content no funciona cuando esta en una sola linea. es decir cuando el flex-wrap: no wrap ahi no funciona. Siempre que no funcione estiraminetos, ventrados, valores de ancho al 100% al usar el strecth debemos de siempre revisar si si los hijos tienen algun valor de height o width dependiendo si es row o column si direccion.Teniendo en cuenta que row obecede a height ennhijos y el column al width.
+    -flex-start.-
+    -flex-end.-
+    -center.-
+    -stretch.-
+    -space-between.-
+    -space-around.-
+    -space-evenly.-

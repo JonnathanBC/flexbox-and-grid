@@ -21,16 +21,23 @@
       display: flex;
       flex-direction: row-reverse;
       flex-wrap: wrap-reverse;
-      flex-flow: column wrap;
-      justify-content: center;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: flex-start;
     }
     
     .item {
       border: medium solid #999;
-      height: 20%;
+      /* height: 20%; */
       width: 20%;
       background-color: #666;
     }
+
+    /* .item:nth-child(2) {
+      font-size: 250%;
+    } */
+
   </style>
 </head>
 <body>
