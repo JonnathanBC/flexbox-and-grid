@@ -78,3 +78,41 @@ Flexbox tiene varias propiedades unas son aplicadas a elemento padre y otras a l
     -space-between.-
     -space-around.-
     -space-evenly.-
+
+*PROPIEDADES QUE VAN A LOS HIJOS.-
+  -FLUJO DE CRECIMIENTO.-
+    -flex-grow.- por defecto es 0, cuando la caja flexbox tiene espacio sobrante los hijos podran hacer uso de ese espacio sobrante, flex-grow es la habilidad p factor de crecer no acepta valores negativos (-1 -2 etc). Se reparte todo el espacio de manera proporcional iguales a los elementos hijos.
+    
+    calculos: Si tenemos 3 elementos y un contenedor con acho de 1000px y los hijos con un ancho de 100px serian los calculos de la sig manera:
+    si le damos un flex-grow: 1 todos mediran 333.333 divide de manera proporcional.
+    si le damos un flex:grow: 1, y al elemento 2 un flex-grow: 2, pues tenemos el primer y tercer elemento con 1 y el segundo con 2, el calculo seria de todo el sobrante que tenemos, de 1000 tenemos 3 elemntos de 100 pues sobra 700px en el contenedor esos 700px se dividen para 4 en este caso, porque, porque tenemos 3 elementos pero uno de ellos es dos seria item 1(1) + item2 (2) + item(3)(1) = 4, los 700 se divide para 4 nos daria un valor de 175px y le tenemos que sumar el valor de 100px que tiene cada caja seria 175 + 100 = 275 para los item que tienen el flex-grow: 1 y para calcular del iitem 2 con el flex-grow: 2 a esos 275 tenemos que sumarle 175 porque es lo que obtenemos del resultado de la division de 700 para 4 275+175 = 450, entonces item 1 tiene 275 item2 tiene 450 y el item 3 tiene 275.
+
+    Otro ejm.
+    contendor de ancho 1000 e items de ancho 100, el item 1 flex-grow: 1, item 2 flex-grow: 3, item: 3 flex-grow: 2, igual sumamos los flex-grow que tiene cada item 1 + 3 +2 = 6, 6 se divide para 700 que es sobrante nos da 116.66, se suma los 100 que tiene cada item de ancho 116.66 + 1000 = 216.666 aqui ya el item1 tiene 216.666, luego el item dos tiene grow de 3 le tenemos que sumar a los 216.66 2 veces el resultado de la division de el sobrante con los ocupantes que seria 116.66 + 116.66 + 216.66 = 449,98, el item 2 ya tiene el valor de 449,98, e igual para el ultimo item como tiene el grow de dos le tenemos que suma 1 vez 116.66 + 216.66 = 333,32 enotces quedaria de la sig manera 
+    item 1 flex-grow: 1 => 216.66
+    item 2 flex-grow: 3 => 449.98 => 450
+    item 3 flex-grow: 1 => 333.32
+
+    //Ejemplo css del ultimo ejercicio
+    container {
+      width: 1000px
+    }
+
+    .item {
+      ...code
+      width: 100px
+      flex-grow: 1
+    }
+
+    .item:nth-child(2) {
+      flex-grow: 3;
+    }
+
+    .item:nth-child(3) {
+      flex-grow: 2;
+    }
+
+
+    -flex-shrink.- por defecto es 1, Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse e igual no se aceptan valores negativos
+
+    -flex-basis.- por defecto es auto, 
