@@ -17,7 +17,7 @@
     .container {
       background-color: #333;
       height: 30vh;
-      width: 1000px;
+      width: 100%;
       
       /* flexbox */
       display: flex;
@@ -34,19 +34,19 @@
       border: medium solid #999;
       /* height: 20%; */
       /* width: 20%; */
-      width: 100px;
       background-color: #666;
-      flex-grow: 1;
+      flex-grow: 0;
       flex-shrink: 1;
       flex-basis: auto;
     }
 
     .item:nth-child(2) {
-      flex-grow: 3;
+      /* flex-grow: 3; */
+      flex-shrink: 2;
     }
 
     .item:nth-child(3) {
-      flex-grow: 2;
+      /* flex-grow: 2; */
     }
 
   </style>

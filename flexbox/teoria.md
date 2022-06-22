@@ -112,7 +112,19 @@ Flexbox tiene varias propiedades unas son aplicadas a elemento padre y otras a l
       flex-grow: 2;
     }
 
+    FACTOR DE REDUCCION.-
+      -flex-shrink.- por defecto es 1, Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse e igual no se aceptan valores negativos.
+      Es decir lo elementos si tenemos una caja al 100% y los hijos que tienen el flex-shrink: 1 que es su valor por dfecto esto se van encogiendo si hacemos mas pequeña la pantalla del navegador, llega a un punto donde no caben mas y se empiezan ha hacer como "responsivos", y si tenemos en 0 el valor pues pirden la "responsividad" y nos genera ya la barra de scroll abajo. Funciona igual que el flex-grow solo que este es al contrario reduce igual se reducen con calculos no exactamente a la mitad en relacion al container padre.
 
-    -flex-shrink.- por defecto es 1, Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse e igual no se aceptan valores negativos
+      //CALCULO.-
+      Tenemos una caja al 100% de witdh, y 3 hijos con 79.78 de width, el primer hijo con el flex-shrink: 1, el 2do hijo con el flex-shrink:2 y el 3er con el flex-shrink: 1
+      Se calcula en base al contenedor, es decir, lo que mide cada hijo 79.78 * el numero de hijos 3 = 239,34 aqui no hay problema pero en el hipotetico caso que el contenedor mida 220, restamos los 239.34 - 220 = 19.34, entonces cada hijo se reducira 19.34, entonces el valor que tenemos de resta osea lo que cada hijo debe reducirse pues tenemos que dividir para los hijos que son teniendo en cuenta el flex-shrink, osea el 1 tiene 1, el 2 tiene 2, y el 3 tiene 1 osea sumamos los flex-shrink y nos daruia 4 entonces tenemos que dividir eso para 4 (19.34 / 4 = 4.835) entonces el hijo 1 y 3 que son flex-shrink: 1 tiene el valor de reduccio de 4.835. Para calcular el que tiene flex-dshrink: 2 seria el 4.835 multiplicado por 2 (4.835 * 2 = 9.67). Ya teniendo estos calculos al valor inicial debemos restarles estos valor 
 
-    -flex-basis.- por defecto es auto, 
+      Cuando el padre mide 220px
+      hijo 1 => 79.78 - 4.835 = 74.945 => 75
+      hijo 2 => 79.78 - (4.835 * 2 = 9.67) = 70.11  
+      hijo 3 => 79.78 - 4.835 = 74.945 => 75
+
+      Asi se hace el calculo de eso. Segun los hijos que tengan el flex-shrink: 1 2 3 etc.
+
+    -flex-basis.- por defecto es auto
