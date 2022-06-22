@@ -127,4 +127,7 @@ Flexbox tiene varias propiedades unas son aplicadas a elemento padre y otras a l
 
       Asi se hace el calculo de eso. Segun los hijos que tengan el flex-shrink: 1 2 3 etc.
 
-    -flex-basis.- por defecto es auto
+    -flex-basis.- por defecto es auto, es el tamaño del elemento hijo dentro de la linea de la caja flexbox, si la caja flexbox tiene una direccion de fila, flex-basis representa el width(ancho), si la caja esta en columna flex-basis representa el height(alto). Cuando tenemos una propiedad flex-basis y la direccion en row ignorabcompletamente la propiedad width asi tenga poir cascada mas valor lo ignora por completo asi le pongamos en width de 500px y u flex-basis: 100 siempre se quedara con el valor de 100px dado en el baisis. e igual cuando la direccion es column solo que en el height
+
+    Tenemos unn atajo que nos ahorra escribir los flex-grow o flex-shrink o flex-basis se llama flex, y van en ese orden, el valor primero es el de grow, el segundo es el del shrink y el tercero en el basisi:
+    flex: 0 1 300px.
