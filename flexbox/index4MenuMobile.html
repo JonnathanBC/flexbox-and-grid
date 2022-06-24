@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical exercises Felxbox (Menu Vertical Mobile)</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh
+    }
+
+    main {
+      flex-grow: 1;
+    }
+
+    .titulares {
+      padding: 1rem;
+      background-color: #222;
+      color: #eee
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .menu ul {
+      list-style-type: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu ul {
+        display: flex;
+      }
+
+      .menu li {
+        padding: 0.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="titulares header">
+    <div class="logo">Logo</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Sección 1</a></li>
+        <li><a href="#">Sección 2</a></li>
+        <li><a href="#">Sección 3</a></li>
+        <li><a href="#">Sección 4</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Contenido</h2>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nisi doloremque ut, accusamus nobis consequatur sunt voluptatum atque similique magnam nihil eos corrupti deserunt reprehenderit repellat sapiente exercitationem quas! Omnis!
+  </main>
+  <footer class="titulares">
+    <h2>Sticky Footer</h2>
+  </footer>
+  
+</body>
+</html>
