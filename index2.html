@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendiendo Flexbox</title>
+  <style>
+    /*Este reseto de html es muy importante, un aspecto muy importante en css es el modelo de caja porque el tamaño de la caja se empieza a considerar desde el contenido y si trabajamos con paddings border, margenes esto aumentara el tamaño de la caja por lo cual puede ser que no quepa algo y se salte a la linea de abajo, al darle este reseto el tamaño de la caja siempre empezara desde el borde(osea desde el inicio) no desde el contenido */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /*Flexbox container (padre) */
+    .container {
+      background-color: #333;
+      height: 30vh;
+      width: 100%;
+      
+      /* flexbox */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: flex-start;
+    }
+    
+    /* Flexbox item(hijos) */
+    .item {
+      border: medium solid #999;
+      /* height: 20%; */
+      /* width: 20%; */
+      background-color: #666;
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 100px;
+      flex: 0 1 auto;
+      align-self: stretch;
+      order: 0;
+    }
+
+    .item:nth-child(2) {
+      /* flex-grow: 3; */
+      /* flex-shrink: 2; */
+      /* order: 1; */
+    }
+    
+    .item:nth-child(3) {
+      /* flex-grow: 2; */
+      align-self: flex-start
+    }
+
+  </style>
+</head>
+<body>
+  <section class="container">
+    <article class="item">Flex Item 1</article>
+    <article class="item">Flex Item 2</article>
+    <article class="item">Flex Item 3</article>
+    <article class="item">Flex Item 4</article>
+    <article class="item">Flex Item 5</article>
+  </section>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <section class="container">
+    <article class="item">Flex Item 1</article>
+    <article class="item">Flex Item 2</article>
+    <article class="item">Flex Item 3</article>
+  </section>
+  <br><br>
+  <section class="container">
+    <article class="item">Item 1</article>
+    <article class="item">Item 2</article>
+    <article class="item">Item 3</article>
+    <article class="item">Item 4</article>
+    <article class="item">Item 5</article>
+    <article class="item">Item 6</article>
+    <article class="item">Item 7</article>
+    <article class="item">Item 8</article>
+    <article class="item">Item 9</article>
+    <article class="item">Item 10</article>
+    <article class="item">Item 11</article>
+    <article class="item">Item 12</article>
+    <article class="item">Item 13</article>
+    <article class="item">Item 14</article>
+    <article class="item">Item 15</article>
+    <article class="item">Item 16</article>
+    <article class="item">Item 17</article>
+    <article class="item">Item 18</article>
+    <article class="item">Item 19</article>
+  </section>
+</body>
+</html>
