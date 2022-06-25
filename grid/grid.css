@@ -58,3 +58,30 @@ img {
   background-color: #666;
   border: medium solid #999;
 }
+
+.grid-explicit {
+  display: grid;
+  /* Grid 3c * 3r */
+  grid-template-rows: 2rem 20vh 30%;
+  grid-template-columns: 50% 100px 1fr;
+
+  /* Grid 5c * 4r */
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  /* Grid 4c * 5r Donde en las filas del medio tiene el mismo tamaño y la de los extremos de diff tamaño */
+  grid-template-columns: 20% repeat(2, 30%) 20%;
+  grid-template-rows: repeat(5, auto);
+
+  /*Espacio entre rows and columns propiedades obsoletas */
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+  /* grid-gap: 100px 0; La union de las dos grid-row-gap y grid-column-gap */
+
+  /*Espaciado entre rows y columns esta propiedad viene a reemplazar a las 3 obsoleta de arriba */
+  gap: 1vh 1vw; /* Donde el primer valor es de las filas y la segunda de las columnas */
+  gap: 0;
+
+}
