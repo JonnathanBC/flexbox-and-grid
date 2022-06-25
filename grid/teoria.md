@@ -10,7 +10,7 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
 -Grid Cell (Celda de Cuadricula).- Interseccion entre columan y fila cada rectangulo
 -Grid Area (Area Cuadricula).- Son area cuadriculares pueden ser rectangulos o cuadrados perfectos, es como la combinacion de celdas, lo que no se vale formar son figuras irregulares solo cuadrada o rectangular
 
-GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una grid explicita se llama asi porque como su nombre explicitamente vamos a definir el número de filas y columnas que queremos que nuestra grid tenga ejm:
+!!! GRID EXPLICITA !!!.- Hay varias maneras de definir una grid, la mas elemental es una grid explicita se llama asi porque como su nombre explicitamente vamos a definir el número de filas y columnas que queremos que nuestra grid tenga ejm:
 
   .grid-explicit {
     display: grid; //Display 
@@ -29,7 +29,7 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
     grid-template-columns: 20% repeat(2, 30%) 20%; aqui quiero que las dos columnas de la mitad tengan 30 ahi si vale el repeat no podemos colocar el repeat por ejm a las de 20 porque esta una de 20 yt solo hasta el final la otro no esta seguida la aplica para filas o columnas.
     Tambein podemos dar espaciado entre las celdas, existe una propiedad antes llamada grid-gap, para espaciodo entre filas existia un grid-row-gap y para las columnas grid-column-gap antes se llamaban asi, ahora se llama gap que viene a suplantar estas ya obsoletas propiedades anteriores
 
-  POSICIONAMIENTO EN GRID LINES.- Podemos nosotros hacer que un elemento se posicione en una determinada coordenada por asi decirlo en determinada celda de la cuadricula que hemos definido y lo podemos lograr de dif formas ejm:
+  !!! POSICIONAMIENTO EN GRID LINES !!!.- Podemos nosotros hacer que un elemento se posicione en una determinada coordenada por asi decirlo en determinada celda de la cuadricula que hemos definido y lo podemos lograr de dif formas ejm:
 
   Posiciona segun las grid lines.
     .grid-explicit .item:nth-child(10) {
@@ -58,7 +58,7 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
     }
   Una buena práctica si empezamos a alinear los elementos debemos de alinear todos, porque si dejamos que grid lo posicione segun su lagoritmo nos pueden quedar espacios o incluso desaparece el contenido de esa grid.
 
-  POSICIONAMIENTO CON GRID LINE NOMBRADOS.- Podemos dar nombres explicitos a las grid lines, los nombres como buena practica deben ser semanticos osea con sentido comun ejm :
+  !!! POSICIONAMIENTO CON GRID LINE NOMBRADOS !!!.- Podemos dar nombres explicitos a las grid lines, los nombres como buena practica deben ser semanticos osea con sentido comun ejm :
 
     .grid-line-names {
       display: grid;
@@ -79,7 +79,7 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
 
     Cuando usamos los grid lines nos podemos usar grid-area el atajo de grid-row y grid-column en la técnica de los nombres.
 
-  POSICIONAMIENTO CON GRID AREAS.- Nos ayuda a dar nombres de areas tambien donde es mas semantico y una mejor practica de usar este tipo de posicionamientos ya sean con nombres de areas o posicionamiento en lineas sin nombre pero porque si vemos cuando emepzamos a posicionar y a nombrar las lineas es muy engorroso y se llena de nombres nuestro css y es una mejor practica hacerlo con grid areas nombradas en este ejm vamos a realizar una maquetacion típica de una header, side, content y footer y vamos a poder apreciar la técnica esta de posicionamiento con grid areas nombradas porque ya al area de header le podemos dar le nombre del area a header y sería mas semántico ejm en el index.html.
+  !!! POSICIONAMIENTO CON GRID AREAS !!!.- Nos ayuda a dar nombres de areas tambien donde es mas semantico y una mejor practica de usar este tipo de posicionamientos ya sean con nombres de areas o posicionamiento en lineas sin nombre pero porque si vemos cuando emepzamos a posicionar y a nombrar las lineas es muy engorroso y se llena de nombres nuestro css y es una mejor practica hacerlo con grid areas nombradas en este ejm vamos a realizar una maquetacion típica de una header, side, content y footer y vamos a poder apreciar la técnica esta de posicionamiento con grid areas nombradas porque ya al area de header le podemos dar le nombre del area a header y sería mas semántico ejm en el index.html.
 
     .grid-areas {
       display: grid;
@@ -112,7 +112,7 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
         "footer  footer"; esta propiedad se seuira modificando segun lo que queremos lograr.
     Otro ejm que se puede dar es que en un sidebar como lo estamos ejemplificando ahora necesite que de los dos espacios que tiene ocupe solo uno osea el espacio en fila tambien lo podemos lograr con el nombre de area pero le damos el nombre del area y el valor de punto ejm "content ." asi solo tomara un espacio  en fila.
 
-  GRID IMPLÍCITA GRIDS DE BLOQUE Y DE LINEA.- Es como que tenemos una grid de 4c * 3 pero si tenemos 19 items enotnces no abaraca del item 13 al 19, entonces nosotros podemos hacer que la grid siga creciendosegun los elementos que tenga asi tenga una definicion en este ejm de 4c * 3r,pero esas columnas no tendran el mismo tamaño que le demos a las filas y siempre debemos de crear las grid si queremos fijas debemos de fijarnos siempre al tamao del cotenedor padre y cuando y los items que no entra en la grid pues se iran acomodando y al tamaño del contenedor padre y si ya no caben pues estos se desbordan y esto items van a tener el valor automatico es decir a los items que le coloquemos mas contenido y esta desbordado se acomoda segun lo que necesite.
+  !!! GRID IMPLÍCITA GRIDS DE BLOQUE Y DE LINEA !!!.- Es como que tenemos una grid de 4c * 3 pero si tenemos 19 items enotnces no abaraca del item 13 al 19, entonces nosotros podemos hacer que la grid siga creciendosegun los elementos que tenga asi tenga una definicion en este ejm de 4c * 3r,pero esas columnas no tendran el mismo tamaño que le demos a las filas y siempre debemos de crear las grid si queremos fijas debemos de fijarnos siempre al tamao del cotenedor padre y cuando y los items que no entra en la grid pues se iran acomodando y al tamaño del contenedor padre y si ya no caben pues estos se desbordan y esto items van a tener el valor automatico es decir a los items que le coloquemos mas contenido y esta desbordado se acomoda segun lo que necesite.
 
     .grid-implicit {
       /* Grid de 4c * 3r */
@@ -134,3 +134,21 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
     }
     Cuando usamos display: grid este se comporta en bloque osea para abajo cada grid , y cuando aplicamos el modelo inline-grid este toma en linea osea horizontalmente cada grid.
 
+  !!! FLUJO DE LA GRID !!!.- Por defecto el comportamiento de grid es que se vayan generando filas, pero tambien podemos invertir el flujo, osea que primero se generen columns.
+  Lo podemos hacer con la propiedad gird-auto-flow po defecto su valor en row:
+  .grid-flow {
+    display: grid;
+    /* Grid 5c*4r */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    grid-auto-flow: row;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+  }
+  Pero también tiene mas valores: grid-auto-flow: ;
+    -column.- Osea primero crea las columnas y afectara el diseño de la grid.
+    Revisar documentacion para los otros valores
+
+    Tambein tenemos una propiedad que es grid-auto-rows: y su valor por defecto es auto, esta esntra cuando la grid explicta se van generando mas items en la grid, esta nos va a determinar que los items que no entren en la grid que definimos sean auto osea el tamaño que deben de tomar el resto de items que no caben y toman todo el espacio disponible. Podemos tambien modificar el auto por medidas absoluta sosea en pixeles y ese sera el valor que tomara acad elemento sobrante en la grid. Esta prop se usa cuando el valor de el flujo de la grid sea row grid-auto-flow: row.
+
+    Tambien tenemos una propiedad llamada grid-auto-columns: le damos un valor que queremos esto se usa cuamdo el valor de del flujo de la grid sea column grid-auto-flow: column

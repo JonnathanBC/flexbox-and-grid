@@ -160,3 +160,13 @@ img {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 200px); /* Altura de los items hace referencia los rows. */
 }
+
+.grid-flow {
+  display: grid;
+  /* Grid 5c*4r */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  grid-auto-flow: column;
+  grid-auto-rows: 150px;
+}
+
