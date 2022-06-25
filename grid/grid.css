@@ -309,4 +309,23 @@ img {
   grid-auto-rows: repeat(2, 10vh 20vh);
 }
 
+.grid-dynamics {
+  display: grid;
+  /* Grid 4c * ?r*/
+  grid-template-columns: repeat(4, 100px);
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fit, 100px);
+
+  /*auto-fit y auto-fill Con tamaños mínimos y máximos */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+
 
