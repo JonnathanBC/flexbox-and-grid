@@ -57,3 +57,25 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
       grid-column: span 3; /* en columna ocupa dos espacios osea para los lados */
     }
   Una buena práctica si empezamos a alinear los elementos debemos de alinear todos, porque si dejamos que grid lo posicione segun su lagoritmo nos pueden quedar espacios o incluso desaparece el contenido de esa grid.
+
+  POSICIONAMIENTO CON GRID LINE NOMBRADOS.- Podemos dar nombres explicitos a las grid lines, los nombres como buena practica deben ser semanticos osea con sentido comun ejm :
+
+    .grid-line-names {
+      display: grid;
+      /* Grid 3c * 3r auto */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+      grid-template-rows: [linea-r1] auto [linea-r2] auto [linea-r3] auto [linea-r4];
+
+      Debemos de darnos en cuenta que la ultima grid linea no tiene que llevar fraccion o valor en px porque es la ultima si no se rompe la grid. Y le colocamos en auto al grid template rows para que tome el ancho segun el contenido si no se rompe la maquetacion de la grid.
+    }
+
+    .grid-line-names .item:nth-child(3) {
+      color: cyan;
+      grid-row: linea-r3 / linea-r4;
+      grid-column: linea-c1 / linea-c4;
+    }
+
+    Cuando usamos los grid lines nos podemos usar grid-area el atajo de grid-row y grid-column en la técnica de los nombres.
+

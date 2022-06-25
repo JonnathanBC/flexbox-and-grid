@@ -109,3 +109,17 @@ img {
   grid-column: 1 / span 2;
 }
 
+.grid-line-names {
+  display: grid;
+  /* Grid 3c * 3r auto */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: [linea-c1] 1fr [linea-c2] 1fr [linea-c3] 1fr [linea-c4];
+  grid-template-rows: [linea-r1] auto [linea-r2] auto [linea-r3] auto [linea-r4];
+}
+
+.grid-line-names .item:nth-child(3) {
+  color: cyan;
+  grid-row: linea-r3 / linea-r4;
+  grid-column: linea-c1 / linea-c4;
+}
