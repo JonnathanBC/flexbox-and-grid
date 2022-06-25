@@ -110,4 +110,27 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
         "content sidebar"
         "etc etc"
         "footer  footer"; esta propiedad se seuira modificando segun lo que queremos lograr.
-    Otro ejm que se puede dar es que en un sidebar como lo estamos ejemplificando ahora necesite que de los dos espacios que tiene ocupe solo uno osea el espacio en fila tambien lo podemos lograr con el nombre de area pero le damos el nombre del area y el valor de punto ejm "content ." asi solo tomara un espacio  en fila
+    Otro ejm que se puede dar es que en un sidebar como lo estamos ejemplificando ahora necesite que de los dos espacios que tiene ocupe solo uno osea el espacio en fila tambien lo podemos lograr con el nombre de area pero le damos el nombre del area y el valor de punto ejm "content ." asi solo tomara un espacio  en fila.
+
+  GRID IMPLÍCITA GRIDS DE BLOQUE Y DE LINEA.- Es como que tenemos una grid de 4c * 3 pero si tenemos 19 items enotnces no abaraca del item 13 al 19, entonces nosotros podemos hacer que la grid siga creciendosegun los elementos que tenga asi tenga una definicion en este ejm de 4c * 3r,pero esas columnas no tendran el mismo tamaño que le demos a las filas y siempre debemos de crear las grid si queremos fijas debemos de fijarnos siempre al tamao del cotenedor padre y cuando y los items que no entra en la grid pues se iran acomodando y al tamaño del contenedor padre y si ya no caben pues estos se desbordan y esto items van a tener el valor automatico es decir a los items que le coloquemos mas contenido y esta desbordado se acomoda segun lo que necesite.
+
+    .grid-implicit {
+      /* Grid de 4c * 3r */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 200px); /* Altura de los items hace referencia los rows. */
+    }
+
+    Tenemos esta propiedad de display: inline-grid; por naturaleza inline lo que haces es ocupar solo el espacio requerido horizontalmente, este hace que todo el containerse pase a la izq osea la incio de la pantalla, entonces solo ocupara  los 80vh que tenemos en nuestro container por eso se alinea a la derecha, cuando nosotros usamos un display: inline sea grid o flex no podemos aplicar margenes laterales
+
+    Esto del inline grid nos puede servir cuando nosotros queremos tener 3 grid en linea una ya sea para un referecncia de libros, otro de juegos y otro de comida por ejm entonces las 3 se posicionar en linea una alado de la otra.
+    .grid-implicit {
+      /* Grid de 4c * 3r */
+      width: 40%;
+      display: grid;
+      display: inline-grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 200px); /* Altura de los items hace referencia los rows. */
+    }
+    Cuando usamos display: grid este se comporta en bloque osea para abajo cada grid , y cuando aplicamos el modelo inline-grid este toma en linea osea horizontalmente cada grid.
+
