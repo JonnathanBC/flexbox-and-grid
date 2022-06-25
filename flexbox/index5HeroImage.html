@@ -20,6 +20,11 @@
       min-height: 100vh
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     main {
       flex-grow: 1;
     }
@@ -61,6 +66,16 @@
       font-size: 5vw;
     }
 
+    .flex-responsive {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .flex-responsive-item {
+      border: thin solid #f60;
+      flex: 1 1 200px;
+    }
+
     /*Media Queries */
     @media screen and (min-width: 1024px) {
       .header {
@@ -75,6 +90,23 @@
 
       .menu li {
         padding: 0.5rem;
+      }
+
+      .flex-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .flex-item {
+        flex: 0 0 50%
+      }
+
+      .flex-order-1 {
+        order: 1
+      }
+
+      .flex-row-reverse {
+        flex-direction: row-reverse;
       }
     }
 
@@ -93,12 +125,53 @@
     </nav>
   </header>
   <main>
-    <h2>Contenido</h2>
     <article class="hero-image">
       <div>
         <h1>Flexbox is fucking cool</h1>
       </div>
     </article>
+    <section class="flex-container">
+      <article class="flex-item">
+        <h1>Titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas pariatur, amet magni tenetur soluta odit ea, nulla ducimus nisi, natus nostrum adipisci officia officiis possimus quisquam animi aperiam velit eligendi.</p>
+      </article>
+      <article class="flex-item">
+        <img src="https://placeimg.com/400/400/people" alt="People">
+      </article>
+    </section>
+
+    <section class="flex-container flex-row-reverse">
+      <article class="flex-item ">
+        <h1>Titulo2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas pariatur, amet magni tenetur soluta odit ea, nulla ducimus nisi, natus nostrum adipisci officia officiis possimus quisquam animi aperiam velit eligendi.</p>
+      </article>
+      <article class="flex-item">
+        <img src="https://placeimg.com/400/400/arch" alt="Arch">
+      </article>
+    </section>
+
+    <h2>Responsive without MQ with Flexbpx</h2>
+    <section class="flex-responsive">
+      <article class="flex-responsive-item">Item Responsivo 1</article>
+      <article class="flex-responsive-item">Item Responsivo 2</article>
+      <article class="flex-responsive-item">Item Responsivo 3</article>
+      <article class="flex-responsive-item">Item Responsivo 4</article>
+      <article class="flex-responsive-item">Item Responsivo 5</article>
+      <article class="flex-responsive-item">Item Responsivo 6</article>
+      <article class="flex-responsive-item">Item Responsivo 7</article>
+      <article class="flex-responsive-item">Item Responsivo 8</article>
+      <article class="flex-responsive-item">Item Responsivo 9</article>
+      <article class="flex-responsive-item">Item Responsivo 10</article>
+      <article class="flex-responsive-item">Item Responsivo 11</article>
+      <article class="flex-responsive-item">Item Responsivo 12</article>
+      <article class="flex-responsive-item">Item Responsivo 13</article>
+      <article class="flex-responsive-item">Item Responsivo 14</article>
+      <article class="flex-responsive-item">Item Responsivo 15</article>
+      <article class="flex-responsive-item">Item Responsivo 16</article>
+      <article class="flex-responsive-item">Item Responsivo 17</article>
+      <article class="flex-responsive-item">Item Responsivo 18</article>
+      <article class="flex-responsive-item">Item Responsivo 19</article>
+    </section>
   </main>
   <footer class="titulares">
     <h2>Sticky Footer</h2>
