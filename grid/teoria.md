@@ -175,3 +175,6 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
     grid-auto-flow: column reverse;
 
     Si el valor del grid-auto-flow es row eso significa que la grid va a respetar el número exolicito que hayamos definido de columnas y si necesita genera mas segun el acomodo que hagamos va a generar mas filas implicitamente, osea dinamicamente si tenemos de 5 columnas siempre seran 5 pero filas mil, en cmabio cuando tenemos grid-auto-flow en column pues respeta las filas y genera mas columnas.
+
+  !!! Grid Layers celdas en capa (Superposicion).-Son los elementos que estan mas al fondo o mas al frente.
+  Vamos ha hacer un ejm de que tenemos una grid 4*4 pero tenemos una caja mas que queremos que aparezca adelante de todos osea la grid de 4 detras y ese elemento adelante.
