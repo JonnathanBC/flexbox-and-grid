@@ -216,3 +216,27 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
       justify-self: start;
       align-self: start;
     }
+
+  !!! ALINEACION DE GRID TRACKS !!!.- Es una alineacion por decirlo de una manera por bloque, osea todas las filas o todas la columnas.
+  Tenemos las propiedades de justify-content que alinea los tracks en la grid en el horizontal con los sig valores :
+    start.- Alinea al inicio osea a la izq pero ocupa todo porque en en bloque en fila o columnap por defecto
+    end;.- Alinea al final osea a la derecha pero ocupa todo porque en en bloque en fila o columna
+    center.- Alinea al centro en bloque.
+    space-between.- Da espacio entre bloques pero desde el margen 0 para la izq osea sin considerar las orillas.
+    space-around.- Da espacio entre bloques contando los margenes, le da como un padding de ahi los alinea.
+    space-evenly.- Da el mismo espacio entre elemento y orillas.
+
+  Tenemos tambien align-content que este alinea los los tracks de la grid en el eje vertical (Y) con los sig valores:
+    start.- Alinea arriba osea al margen top
+    end.- Alinea abajo osea al margen end
+    center.- Centra todo.
+    space-between  //Igual que los valores de justify.-content si no que el align-content va al eje Y
+    space-around //Igual que los valores de justify.-content si no que el align-content va al eje Y
+    space-evenly //Igual que los valores de justify.-content si no que el align-content va al eje Y
+
+  
+
+
+
+
+
