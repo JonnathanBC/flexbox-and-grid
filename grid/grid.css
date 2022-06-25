@@ -298,3 +298,15 @@ img {
   grid-template-columns: repeat(4, minmax(max-content, 2200px));
   grid-template-columns: repeat(4, minmax(min-content, max-content));
 }
+
+.grid-repeat {
+  display: grid;
+  /* Grid de 4c * ?r*/
+  grid-template-columns: repeat(4, 10% 20% 30% 40%);
+  grid-template-columns: repeat(1, 10% 20% 30% 40%);
+  grid-template-rows: repeat(2, 10vh 20vh);
+  grid-auto-rows: 150px;
+  grid-auto-rows: repeat(2, 10vh 20vh);
+}
+
+

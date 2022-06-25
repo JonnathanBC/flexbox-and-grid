@@ -258,7 +258,22 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
     Esto tiene siempre afectacion a los tracks completos como filas y columnas toda la fila o toda la columna.
     Pero debemos de tener cuidado al usar esto invertido porque puede ser que el valor mínimo sea mas grande que el máximo que le damos etonces queda en comflicto y le da el valor minimo mas alto.
 
+  !!! GRID CON PATRONES REPETITIVOS !!!.- Esto nos permite generar ciertos patrones que nos permitan automatixar el numero de lementos que queremos sacar.
+  Asi generamos solo columnas y las filas se iran colocando segun necesiten, tipo grid explicit, usado en los scrolls infinitos:
+  .grid-repeat {
+    display: grid;
+    /* Grid de 4c * ?r*/
+    grid-template-columns: repeat(4, 1fr);
+  }
+  Estos patrones no puede ser de mucha ayuda para scroll infinitos. Recordar que una cudricula cuando llega al limite osea estan dentro del contenedor, estos items se salen o no van a tener los mismos valores. y como vismo en clases anteriores lo podemos solucionar dandodle algun valor fijo si deseamos por ejm 
 
-
-
-
+  .grid-repeat {
+    display: grid;
+    /* Grid de 4c * ?r*/
+    grid-template-columns: repeat(4, 10% 20% 30% 40%);
+    grid-template-columns: repeat(1, 10% 20% 30% 40%);
+    grid-template-rows: repeat(2, 10vh 20vh);
+    grid-auto-rows: 150px;
+    grid-auto-rows: repeat(2, 10vh 20vh) /* Esto no sirve la funcion repeat la podemos usar solo en grid template columns y grid-template-rows no en los auto-rows o auto columns */
+  }
+  En este ejm los items que ya no entran en la grid tendran siemore este valor.
