@@ -234,7 +234,29 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
     space-around //Igual que los valores de justify.-content si no que el align-content va al eje Y
     space-evenly //Igual que los valores de justify.-content si no que el align-content va al eje Y
 
-  
+  !!! TAMAÑOS MAXIMOS Y MÍNIMOS DE GRID TRACKS !!!.- Tenemos una funcoin minmax que nos permite tener maximos y mínimos tamañospara cada uno de los trackks de la grid dependiendo en donde estos declarando la funcion siendo en row o columns. Teniendo en cuenta que si nosotros respetamos el flujo de la grid en filas respeta el numero de columnas dado osea este es fijo siempre, pero si es en columna este respeta el numero de filas dado es fijo y las columnas son la que se generan segun necesite.
+
+  .grid-min-max {
+    display: grid;
+    /* Grid 4c * ?r, Osea genera las filas segun necesita lo podemos usar en un scroll infinito. */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(100px, 200px));
+    }
+    El minmax recibe dos valores primero el minimo y segundo el maximo se puede usar cualquier medida px, fr, rem, em etc etc. En este ejm aqui si se reduce los items pero como le pusimos 200px como maximo pues hasta los 200 px crecera.
+    Hay 2 valores que se le pueden asignar al min max, min-content y max-content, esto depende del minimo o maximo contenido que tengan la columna ejm :
+
+    grid-template-columns: repeat(4, minmax(min-content, 200px));
+
+    Lo podemos usar al reves tambien, Siempre sera 100 px el minimo pero el maximo le dimos min-content entonces el maximo sera el minimo contenido de la columna.
+    grid-template-columns: repeat(4, minmax(100px, min-content));
+    
+    Tambien tenemos max-conten
+    grid-template-columns: repeat(4, minmax(100px, max-content));
+    Lo podemos invertir tambien
+    grid-template-columns: repeat(4, minmax(max-content, 100px));
+
+    Esto tiene siempre afectacion a los tracks completos como filas y columnas toda la fila o toda la columna.
+    Pero debemos de tener cuidado al usar esto invertido porque puede ser que el valor mínimo sea mas grande que el máximo que le damos etonces queda en comflicto y le da el valor minimo mas alto.
 
 
 
