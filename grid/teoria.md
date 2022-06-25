@@ -152,3 +152,26 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
     Tambein tenemos una propiedad que es grid-auto-rows: y su valor por defecto es auto, esta esntra cuando la grid explicta se van generando mas items en la grid, esta nos va a determinar que los items que no entren en la grid que definimos sean auto osea el tamaño que deben de tomar el resto de items que no caben y toman todo el espacio disponible. Podemos tambien modificar el auto por medidas absoluta sosea en pixeles y ese sera el valor que tomara acad elemento sobrante en la grid. Esta prop se usa cuando el valor de el flujo de la grid sea row grid-auto-flow: row.
 
     Tambien tenemos una propiedad llamada grid-auto-columns: le damos un valor que queremos esto se usa cuamdo el valor de del flujo de la grid sea column grid-auto-flow: column
+
+  !!! FLUJO DENSO DE LA GRID !!!.- Cuando nosotros queremos pareovchar el espacio que dejan algunas cajas de la grid cuando por ejm le damos un espacio de 3 y 3 pero solo tenemos dos este genera otra row como e flujo de la grid entonces quedaria hueco, para poder aprovechar dicho espacio podemos agregar la propiedad grid-auto-flow con el valor de row dense ejm:
+
+    .grid-flow-dense {
+      display: grid;
+      /* Grid 5c*4r */
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(4, 200px);
+      grid-auto-flow: row dense;
+      }
+
+    Al elemento 9 le quedaban dos espacios en fila y queremos que tenga 3 entonces este se baja automaticamente y nos queda espacio para es lo solucionamos con el grid-auto-flow: row dense
+    .grid-flow-dense .item:nth-child(9) {
+      color: cyan;
+      grid-row: span 3;
+      grid-column: span 3;
+    }
+
+    Esto lo que hace es que los elementos que estan despues de lo que se movio o ocupo si tienen espacio estos suben y se colocan ahi, en este caso el item 10 e item 11 subieron a esos espacios que dejo el item 9 que movimos.
+    E igual esto sirve para columna ejm 
+    grid-auto-flow: column reverse;
+
+    Si el valor del grid-auto-flow es row eso significa que la grid va a respetar el número exolicito que hayamos definido de columnas y si necesita genera mas segun el acomodo que hagamos va a generar mas filas implicitamente, osea dinamicamente si tenemos de 5 columnas siempre seran 5 pero filas mil, en cmabio cuando tenemos grid-auto-flow en column pues respeta las filas y genera mas columnas.
