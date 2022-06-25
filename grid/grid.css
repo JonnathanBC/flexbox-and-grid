@@ -227,3 +227,43 @@ img {
   grid-column: 2 / 4;
   grid-row: 2 / 4;
 }
+
+.grid-order {
+  display: grid;
+  /* Grid 3c * 2r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-order .item:nth-child(1) {
+  order: 1;
+}
+
+.grid-order .item:nth-child(2) {
+  order: 2;
+}
+
+.grid-order .item:nth-child(5) {
+  order: -1;
+}
+
+.grid-align {
+  display: grid;
+  /* Grid 3c * 2r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  justify-items: stretch;
+  justify-items: start;
+  justify-items: end;
+  justify-items: center;
+  align-items: stretch;
+  align-items: start;
+  align-items: end;
+  align-items: center;
+}
+
+.grid-align .item:nth-child(4) {
+  justify-self: start;
+  align-self: start;
+}
+

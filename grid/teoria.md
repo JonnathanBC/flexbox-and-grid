@@ -178,3 +178,41 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
 
   !!! Grid Layers celdas en capa (Superposicion).-Son los elementos que estan mas al fondo o mas al frente.
   Vamos ha hacer un ejm de que tenemos una grid 4*4 pero tenemos una caja mas que queremos que aparezca adelante de todos osea la grid de 4 detras y ese elemento adelante.
+
+  !!! ORDEN GRID ITEMS (PROPIEDADES A LOS HIJOS)!!!.- Funcoina igual que la teoria de felxbox von respecto de como alinear y ordenar los elementos con la propiedad order, la que nos permite cambiar el orden de los elementos siendo 0 su valor por defecto que seria el orden normal de izq a der, igual acepta numero positivos y negativos siendo el numero mas pequeño osea los negativos van al inicio, minetras mas grande el numero mas al final 
+  order: 0 normal por defecto
+  order: 1 va al sig espacio
+  order: 2 lo posiciona al final
+  order: -1 Menor a 0 osea, se pondra primero.
+  Este orden siguiendo el flujo de la grid ya sea en columna o fila.
+
+  !!! ALINEACION DE GRID ITEMS (PROPIEDADES A LOS HIJOS).-
+  Casi siempre se trabaja con px en el  grid-template-rows
+  .grid-align {
+    display: grid;
+    /* Grid 3c * 2r */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  Tenemos esta propiedad aqui justify-items: stretch que su valor por defecto es stretch y asi segun los valores cambiara la manera de posicionarse los hijos tenemos center, start etc, este justify trabaja en x, siempre alineara en base o respetco a sucelda y ocupa el ancho que necesita nomas no todo por ejm si le podemos start pues se alinea a la izq pero deja un espacio a la der en este caso la fila es de 200px por ejm podiria ocupar 150px y deja 50px por ejemplificar.
+    stretch.- Es por defecto como parace de prima carga.
+    start.- Se alinea al inico osea a la izq pero solo ocupa lo que necesita el resto deja libre.
+    end.- Se alinea al fin osea a la der/ pero solo ocupa lo que necesita el resto deja libre.
+    center.- Lo centra, pero solo ocupa lo que necesita el resto deja libre.
+    baseline.- Depende el taaño de la tipografia.
+
+    Respecto de y para alinear seria de usar la propiedad align-items: por defecto siendo stretch y con los mismo valores de justofy-items si no que este centra en el cross y horizontal.
+    start.- Se alinea arriba
+    end.- Se alinea abajo
+    center.- Lo centra
+    stretch.- Valor por defecto.
+
+    En cambio si queremos alinear un solo elemento podemos sin que rompa la maqueta el retso de elementos lo ponemos usar las propiedades justify-self y align-self en este caso vamos a mover el elemnto 4 arriba a la izq ejm :
+
+    .grid-align .item:nth-child(4) {
+      justify-self: start;
+      align-self: start;
+    }
