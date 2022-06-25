@@ -83,5 +83,29 @@ img {
   /*Espaciado entre rows y columns esta propiedad viene a reemplazar a las 3 obsoleta de arriba */
   gap: 1vh 1vw; /* Donde el primer valor es de las filas y la segunda de las columnas */
   gap: 0;
-
 }
+
+.grid-explicit .item:nth-child(10) {
+  color: cyan;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2 / 3; /* Atajo grid-row-start y grid-row-end */
+  grid-column: 3 / 5; /* Atajo grid-column-start grid-column-end */
+  grid-area: 2 / 3 / 3 / 5; /* Atajo de grid-row y grid column */
+}
+
+.grid-explicit .item:nth-child(12) {
+  color: yellow;
+  grid-row: span 2; /* en fila ocupa dos espacios osea para abajo */
+  grid-column: span 3;
+}
+
+.grid-explicit .item:nth-child(15) {
+  /* Estamos posicionando aqui en la primer celda */
+  color: crimson;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+

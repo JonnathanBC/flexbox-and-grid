@@ -29,3 +29,31 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
     grid-template-columns: 20% repeat(2, 30%) 20%; aqui quiero que las dos columnas de la mitad tengan 30 ahi si vale el repeat no podemos colocar el repeat por ejm a las de 20 porque esta una de 20 yt solo hasta el final la otro no esta seguida la aplica para filas o columnas.
     Tambein podemos dar espaciado entre las celdas, existe una propiedad antes llamada grid-gap, para espaciodo entre filas existia un grid-row-gap y para las columnas grid-column-gap antes se llamaban asi, ahora se llama gap que viene a suplantar estas ya obsoletas propiedades anteriores
 
+  POSICIONAMIENTO EN GRID LINES.- Podemos nosotros hacer que un elemento se posicione en una determinada coordenada por asi decirlo en determinada celda de la cuadricula que hemos definido y lo podemos lograr de dif formas ejm:
+
+  Posiciona segun las grid lines.
+    .grid-explicit .item:nth-child(10) {
+      color: red;
+      grid-row-start: 2; 
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+
+      /*Atajo para las propiedades de arriba */
+      grid-row: 2 / 3;
+      grid-column: 3 / 4;
+    }
+    Podemos tambien dar a una celda dos espacios ejm:
+    grid-row: 2 / 3;
+    grid-column: 3 / 5; Le damos dos espacios o combinacion de celdas
+
+    Tenemos tambien otro atajo, que seria el atajo de las propiedades grid-row y grid-column, donde primero van los valores de grid-row-start grid-row-end y grid-column-start y grid-column-end
+    grid-area: 2 / 3 / 3 / 5;
+
+    Podemos tambien posicionar con la palabra span esto trabaja en posiciones osea le decimos que ocupe 2 posiciones para abajo y 3 para el lado
+    .grid-explicit .item:nth-child(12) {
+      color: yellow;
+      grid-row: span 2; /* en fila ocupa dos espacios osea para abajo */
+      grid-column: span 3; /* en columna ocupa dos espacios osea para los lados */
+    }
+  Una buena práctica si empezamos a alinear los elementos debemos de alinear todos, porque si dejamos que grid lo posicione segun su lagoritmo nos pueden quedar espacios o incluso desaparece el contenido de esa grid.
