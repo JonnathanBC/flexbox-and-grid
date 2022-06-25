@@ -79,3 +79,35 @@ GRID EXPLICITA.- Hay varias maneras de definir una grid, la mas elemental es una
 
     Cuando usamos los grid lines nos podemos usar grid-area el atajo de grid-row y grid-column en la técnica de los nombres.
 
+  POSICIONAMIENTO CON GRID AREAS.- Nos ayuda a dar nombres de areas tambien donde es mas semantico y una mejor practica de usar este tipo de posicionamientos ya sean con nombres de areas o posicionamiento en lineas sin nombre pero porque si vemos cuando emepzamos a posicionar y a nombrar las lineas es muy engorroso y se llena de nombres nuestro css y es una mejor practica hacerlo con grid areas nombradas en este ejm vamos a realizar una maquetacion típica de una header, side, content y footer y vamos a poder apreciar la técnica esta de posicionamiento con grid areas nombradas porque ya al area de header le podemos dar le nombre del area a header y sería mas semántico ejm en el index.html.
+
+    .grid-areas {
+      display: grid;
+      /* Grid 2c * 3r */
+      grid-template-columns: 1fr 200px;
+      grid-template-rows: 100px 1fr 60px;
+      grid-template-areas: 
+        "header  header"
+        "content sidebar"
+        "footer  footer";
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .content {
+      grid-area: content;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+    Realizamos primero la definicon de las columnas y areas, luego con el grid-template-areas estmos definiendo como primer valor en las comillas "nombre-area referencia", luego a las clases header que colocamos en le html le tenemos que dar el nombre con la propiedad grid-area: nombre-del-area, tiene que ser el mismo nombre que definimos arriba entonces asi haría caso a la maquetación, como vemos header ocupa dos espacios porque es header header, en el content sidebar ocupa dos espacios tambien pero un espacio es para el content y el otro para sidebar y el footer es igual que el header.
+    Si queremos agragr una nueva fila basta con añadir en la defincion de la grid y al nombrar las areas seguirles dando los espacio que va a ocupar es decir esto grid-template-areas: 
+        "header  header"
+        "content sidebar"
+        "content sidebar"
+        "etc etc"
+        "footer  footer"; esta propiedad se seuira modificando segun lo que queremos lograr.
+    Otro ejm que se puede dar es que en un sidebar como lo estamos ejemplificando ahora necesite que de los dos espacios que tiene ocupe solo uno osea el espacio en fila tambien lo podemos lograr con el nombre de area pero le damos el nombre del area y el valor de punto ejm "content ." asi solo tomara un espacio  en fila
