@@ -59,6 +59,12 @@ img {
   border: medium solid #999;
 }
 
+.sub-item {
+  padding: 1rem;
+  border: medium solid #ccc;
+  background-color: #ddd;
+}
+
 .grid-explicit {
   display: grid;
   /* Grid 3c * 3r */
@@ -326,6 +332,31 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.grid-nested {
+  display: grid;
+  /* Grid 3c * ?r */
+  grid-template-columns: repeat(3, 1fr);
+}
 
+/* SUBGRID PASOS */
+.grid {
+  display: grid;
+  /* Grid 3c * 2r */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
 
+.subgrid {
+  /*Para que la caracteristica de subgrid funcione debemos hacer lo sig:
+    1)Definir explicitamente el tamaño que ocupará el elemento que aplicará subgrid del contenedor padre grid, es decir definir sus propiedades grid-column y grid-row. */
+    grid-column: span 3;
+    grid-row: 1 / 3;
 
+    /*2) Aplicar la propiedad display: grid al elemento que aplicará subgrid*/
+    display: grid;
+
+    /*3)Aplicar el valor de subgrid a las columnas, a las filas o ambas depende de cómo se requiera */
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+
+}

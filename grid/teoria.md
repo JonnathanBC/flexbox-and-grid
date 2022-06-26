@@ -297,4 +297,47 @@ A grid css lo empezaron  a soportar en 2017. En grid tambien tenemos algunos con
       grid-template-columns: repeat(auto-fill, 100px);
     }
 
+  !!! Grid Anidadas y Subgrids !!!.- Esto no es mas que hacer que un elemento hijo pueda a su vez ser grid.
+  Lo que podemos hacer es darle la clase misma que estamos haciendo la grid osea el padre y el hijo tengan la misma clase. ejm 
 
+  css
+  .grid-nested {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+  }
+
+  html
+  <section class="container grid-nested">
+    <article class="item grid-nested">
+      <div class="sub-item">
+        <p>Grid Subitem Anidado 1</p>
+      </div>
+  Aqui vemos que el padre es el section y el hijo el article que dentro tiene dis entonces el section y el article tiene la misma clase de grid y ojo son dos grid independientes.
+        
+  !!! Subgrid !!!.- Esto no es mas que los elementos nietos vana aheredar como tal la spropedades y los tamaños de la grid padre. Es una característica que nos va a permitir que los hijos items se pudieran anidar a la grid general del padre, de forma que podemos tener en varios niveles esa grid pero una solo retícula.
+  Esta caracteristica nos esta soportado por ningun navegador excepto de Firefox.
+
+  /* SUBGRID PASOS */
+    .grid {
+      display: grid;
+      /* Grid 3c * 2r */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    .subgrid {
+      /*Para que la caracteristica de subgrid funcione debemos hacer lo sig:
+        1)Definir explicitamente el tamaño que ocupará el elemento que aplicará subgrid del contenedor padre grid, es decir definir sus propiedades grid-column y grid-row. */
+        grid-column: span 3;
+        grid-row: 1 / 3;
+
+        /*2) Aplicar la propiedad display: grid al elemento que aplicará subgrid*/
+        display: grid;
+
+        /*3)Aplicar el valor de subgrid a las columnas, a las filas o ambas depende de cómo se requiera */
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+    }
+    Tiene el mismo comportamiento que darle el nombre de la clase al hijo pero esta grid hereda la grid principal y se hace un solo grid con los mismos tamaños a diff de pasar clases este se convierte en dos grid distintas y con valores diff al padre. Con subgrid heredamos paddings margenes, alturas anchis etc etc de lo que tiene el padre porque esta heredado.
+    Esto nos puede servir para una mquetacion muy compleja, un sitio web informativo si es muy comlejo podemos generar subgrid para que hereden todo los tamaños y todo la herencia pasa de abuela padre, hijos etc etc en cascada.
+    De manera que podemos tener una grid padre y que hereden el resto de contenidos y secciones del proyecto.
